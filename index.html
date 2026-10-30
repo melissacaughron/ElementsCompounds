@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elements &amp; Compounds Practice</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#1c2430;--mute:#5b6676;--line:#d9e0ea;--accent:#2563eb;--accent-ink:#fff;--ok:#157347;--okbg:#e3f5ea;--bad:#b42318;--badbg:#fdeaea;--el:#7c3aed;--co:#0e7490;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151c;--card:#19212b;--ink:#e8edf4;--mute:#9aa7b8;--line:#2c3746;--accent:#5b8dff;--accent-ink:#0b1220;--ok:#6ee7a0;--okbg:#12301f;--bad:#ff9a8f;--badbg:#3a1a18;--el:#b79bff;--co:#5fd3e6;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151c;--card:#19212b;--ink:#e8edf4;--mute:#9aa7b8;--line:#2c3746;--accent:#5b8dff;--accent-ink:#0b1220;--ok:#6ee7a0;--okbg:#12301f;--bad:#ff9a8f;--badbg:#3a1a18;--el:#b79bff;--co:#5fd3e6;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+h1{font-size:1.5rem;margin:8px 0 4px}
+.sub{color:var(--mute);margin:0 0 14px;font-size:.95rem}
+nav{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+nav button{flex:1;min-width:92px;padding:10px 8px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font:inherit;font-weight:600;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.card h2{font-size:1.1rem;margin:0 0 8px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.93rem}
+th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+.el{color:var(--el);font-weight:700}.co{color:var(--co);font-weight:700}
+ul{margin:6px 0;padding-left:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.chip{padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.out{background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:10px;margin-top:8px;min-height:60px}
+.meta{display:flex;justify-content:space-between;color:var(--mute);font-size:.88rem;margin-bottom:8px}
+.dok{font-weight:700;color:var(--accent)}
+.stem{font-size:1.05rem;font-weight:600;margin:0 0 12px}
+.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:11px 12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font:inherit;cursor:pointer}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}
+.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.fb{margin-top:10px;padding:10px;border-radius:10px;background:var(--bg);border-left:4px solid var(--accent)}
+.btn{margin-top:12px;padding:10px 18px;border:0;border-radius:10px;background:var(--accent);color:var(--accent-ink);font:inherit;font-weight:700;cursor:pointer}
+.big{font-size:2.4rem;font-weight:800;text-align:center;margin:8px 0}
+.formula{font-size:2rem;font-weight:800;text-align:center;margin:6px 0}
+.sortbtns{display:flex;gap:10px}
+.sortbtns .opt{text-align:center;font-weight:700}
+sub{font-size:.7em}
+</style>
+</head>
+<body>
+<main>
+<h1>🧪 Elements &amp; Compounds Practice</h1>
+<p class="sub">Compare and contrast elements and compounds using atoms and molecules, chemical symbols, and chemical formulas.</p>
+<nav role="tablist">
+<button role="tab" aria-selected="true" data-t="review">Review</button>
+<button role="tab" aria-selected="false" data-t="sort">Sort It</button>
+<button role="tab" aria-selected="false" data-t="quiz">Practice Questions</button>
+</nav>
+
+<section id="review" class="on">
+<div class="card"><h2>Key ideas</h2>
+<div class="scroll"><table>
+<tr><th></th><th class="el">Element</th><th class="co">Compound</th></tr>
+<tr><th>Made of</th><td>Only <b>one kind</b> of atom</td><td><b>Two or more kinds</b> of atoms chemically bonded</td></tr>
+<tr><th>Symbol</th><td>Has its own symbol (Na, O, Fe)</td><td>No single symbol; uses a <b>formula</b> (H<sub>2</sub>O, NaCl)</td></tr>
+<tr><th>Formula</th><td>Often just the symbol (Fe, He) or a molecule like O<sub>2</sub></td><td>Shows which elements and how many atoms of each (CO<sub>2</sub>)</td></tr>
+<tr><th>Atoms &amp; molecules</th><td>Atoms of the same kind; may exist as molecules (O<sub>2</sub>, N<sub>2</sub>)</td><td>Atoms of different kinds bonded together (many are molecules, like H<sub>2</sub>O)</td></tr>
+<tr><th>Broken down?</th><td>Not by chemical changes</td><td>Yes, into simpler substances by chemical changes</td></tr>
+</table></div></div>
+
+<div class="card"><h2>Vocabulary</h2>
+<ul>
+<li><b>Atom:</b> the smallest unit of an element.</li>
+<li><b>Molecule:</b> two or more atoms bonded together. A molecule can be an element (O<sub>2</sub>) or a compound (H<sub>2</sub>O).</li>
+<li><b>Chemical symbol:</b> one or two letters. The first is capital, the second is lowercase (Cl, not CL). <b>Co</b> is cobalt, but <b>CO</b> is carbon monoxide!</li>
+<li><b>Chemical formula:</b> symbols plus <b>subscripts</b> (small numbers) that tell how many atoms of each element. No number means 1.</li>
+</ul>
+<p>Compounds can have properties very different from the elements in them. Sodium is a reactive metal and chlorine is a poisonous gas, but together they make table salt.</p></div>
+
+<div class="card"><h2>Formula decoder</h2>
+<p class="sub" style="margin:0">Pick a formula to see what it tells you.</p>
+<div class="chips" id="chips"></div>
+<div class="out" id="dec">Choose a formula above.</div></div>
+</section>
+
+<section id="sort">
+<div class="card" id="sortbox"></div>
+</section>
+
+<section id="quiz">
+<div class="card" id="quizbox"></div>
+</section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s);
+const fmt=s=>s.replace(/([A-Za-z\)])(\d+)/g,'$1<sub>$2</sub>');
+
+/* Tabs */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-selected',x===b));
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));
+});
+
+/* Formula decoder */
+const NAMES={H:'hydrogen',C:'carbon',N:'nitrogen',O:'oxygen',Na:'sodium',Cl:'chlorine',Ca:'calcium',Fe:'iron',He:'helium',Au:'gold'};
+const FORMS=['H2O','CO2','NaCl','O2','C6H12O6','CH4','NH3','CaCO3','Fe','He'];
+FORMS.forEach(f=>{const b=document.createElement('button');b.className='chip';b.innerHTML=fmt(f);b.setAttribute('aria-pressed','false');
+  b.onclick=()=>{document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));decode(f)};$('#chips').appendChild(b)});
+function decode(f){
+  const parts=[...f.matchAll(/([A-Z][a-z]?)(\d*)/g)].map(m=>[m[1],+(m[2]||1)]);
+  const total=parts.reduce((a,p)=>a+p[1],0);
+  const kinds=parts.length;
+  let h='<div class="formula">'+fmt(f)+'</div><ul>';
+  parts.forEach(p=>h+='<li><b>'+p[0]+'</b> ('+NAMES[p[0]]+'): '+p[1]+' atom'+(p[1]>1?'s':'')+'</li>');
+  h+='</ul><p>Different kinds of atoms: <b>'+kinds+'</b>. Atoms in one unit: <b>'+total+'</b>.</p>';
+  h+='<p>'+(kinds===1?'<span class="el">Element</span> because it has only one kind of atom.'+(total>1?' It is a molecule of an element: '+total+' atoms, all the same.':''):'<span class="co">Compound</span> because it has '+kinds+' different kinds of atoms bonded together.')+'</p>';
+  $('#dec').innerHTML=h;
+}
+
+/* Sort It */
+const ITEMS=[
+['Oxygen gas','O2','E','Both atoms are oxygen, so it is a molecule of an element.'],
+['Water','H2O','C','Hydrogen and oxygen atoms are bonded together.'],
+['Gold','Au','E','Only gold atoms. A symbol alone is an element.'],
+['Carbon dioxide','CO2','C','Carbon and oxygen are two different elements.'],
+['Table salt','NaCl','C','Sodium and chlorine are bonded.'],
+['Helium','He','E','One kind of atom.'],
+['Methane','CH4','C','Carbon and hydrogen atoms.'],
+['Nitrogen gas','N2','E','Two atoms, but both are nitrogen.'],
+['Ammonia','NH3','C','Nitrogen and hydrogen atoms.'],
+['Iron','Fe','E','One kind of atom.'],
+['Hydrogen peroxide','H2O2','C','Hydrogen and oxygen, in a different ratio than water.'],
+['Ozone','O3','E','Three atoms, all oxygen, so it is an element.']];
+let si=0,ss=0,sa=false;
+function renderSort(){
+  const b=$('#sortbox');
+  if(si>=ITEMS.length){b.innerHTML='<h2>Done!</h2><div class="big">'+ss+' / '+ITEMS.length+'</div><p>Remember: <b>count the kinds of atoms</b>, not the number of atoms.</p><button class="btn" id="sre">Try again</button>';
+    $('#sre').onclick=()=>{si=0;ss=0;renderSort()};return}
+  const it=ITEMS[si];sa=false;
+  b.innerHTML='<div class="meta"><span>Item '+(si+1)+' of '+ITEMS.length+'</span><span>Score: '+ss+'</span></div><p class="stem" style="text-align:center">Is this an element or a compound?</p><div class="formula">'+fmt(it[1])+'</div><p style="text-align:center;margin:0 0 12px;color:var(--mute)">'+it[0]+'</p><div class="sortbtns"><button class="opt" data-a="E">Element</button><button class="opt" data-a="C">Compound</button></div><div id="sfb"></div>';
+  b.querySelectorAll('.opt').forEach(o=>o.onclick=()=>{
+    if(sa)return;sa=true;const right=o.dataset.a===it[2];if(right)ss++;
+    b.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.a===it[2])x.classList.add('ok')});
+    if(!right)o.classList.add('bad');
+    $('#sfb').innerHTML='<div class="fb"><b>'+(right?'Correct!':'Not quite.')+'</b> '+fmt(it[1])+' is '+(it[2]==='E'?'an element':'a compound')+'. '+it[3]+'</div><button class="btn" id="snx">'+(si+1<ITEMS.length?'Next':'See score')+'</button>';
+    $('#snx').onclick=()=>{si++;renderSort()};
+  });
+}
+renderSort();
+
+/* Practice questions: [DOK, stem, options, answer index, explanation] */
+const Q=[
+[1,'What is the chemical symbol for sodium?',['S','So','Na','N'],2,'Na comes from sodium’s Latin name, natrium. S is sulfur and N is nitrogen.'],
+[1,'Which is a correctly written chemical symbol?',['CL','cl','cL','Cl'],3,'The first letter is always capital and the second letter, if there is one, is lowercase.'],
+[1,'Which substance is an element?',['Water','Carbon dioxide','Iron','Table salt'],2,'Iron (Fe) is made of only one kind of atom. The others are compounds.'],
+[1,'In the formula H2O, what does the subscript 2 tell you?',['There are 2 oxygen atoms','There are 2 hydrogen atoms','There are 2 water molecules','Hydrogen is twice as heavy as oxygen'],1,'A subscript tells how many atoms of the element just before it. H2O has 2 hydrogen atoms and 1 oxygen atom.'],
+[2,'How many atoms are in one molecule of CO2?',['2','1','4','3'],3,'1 carbon + 2 oxygen = 3 atoms. No subscript means 1.'],
+[2,'How many different elements are in glucose, C6H12O6?',['3','6','24','1'],0,'C, H, and O are 3 different elements. (24 is the total number of atoms.)'],
+[2,'Oxygen gas is written O2. How is it best described?',['A compound, because it has two atoms','A molecule of an element, because both atoms are oxygen','A mixture of two elements','Two different elements bonded'],1,'A molecule is two or more bonded atoms. Since both atoms are the same kind, O2 is an element.'],
+[2,'Which pair contains only compounds?',['O2 and N2','Fe and Cu','NaCl and H2O','H2 and CO2'],2,'NaCl and H2O each have 2 kinds of atoms. H2 is an element, so the last pair is mixed.'],
+[2,'What is the difference between Co and CO?',['There is no difference; capitals do not matter','Co is carbon monoxide; CO is cobalt','Co is cobalt, an element; CO is carbon monoxide, a compound','Co is a compound; CO is an element'],2,'Capital and lowercase letters matter. Co is one symbol (cobalt). CO is two symbols, C and O.'],
+[3,'Which statement correctly compares elements and compounds?',['Elements have one kind of atom; compounds have two or more kinds chemically bonded','Both are made of only one kind of atom','Compounds have one kind of atom; elements have two or more','Elements are always molecules; compounds are always single atoms'],0,'The number of kinds of atoms is the key difference.'],
+[3,'A student says, “All molecules are compounds.” Which example shows the student is wrong?',['H2O','CO2','N2','NaCl'],2,'N2 is a molecule (2 bonded atoms), but both atoms are nitrogen, so it is an element.'],
+[3,'Sodium (Na) is a soft, reactive metal. Chlorine (Cl) is a poisonous gas. Together they form NaCl, table salt. What does this show?',['Compounds keep the properties of their elements','Elements and compounds always look alike','Table salt is still an element','Compounds can have properties very different from the elements in them'],3,'Bonding changes the properties. Salt is safe to eat even though both of its elements are dangerous alone.'],
+[4,'A student writes the formula for water as HO2 and carbon monoxide as Co. Which correction is right?',['Water should be H2O, and carbon monoxide should be CO because Co is cobalt','Water is correct, but carbon monoxide should be cO','Both are correct as long as the atoms are bonded','Water should be H2O2, and carbon monoxide should be C2O'],0,'Water has 2 hydrogen atoms and 1 oxygen atom (H2O). CO needs a capital O, because Co is the element cobalt. H2O2 is hydrogen peroxide.'],
+[4,'A student looks at a sample labeled CaCO3 and claims, “It is one pure substance, so it must be an element.” Evaluate the claim.',['Correct: one substance means one element','Incorrect: the formula shows three different elements (Ca, C, O) bonded together, so it is a compound','Incorrect: it is a molecule, so it cannot be a compound','Correct: Ca is the first symbol, so it is calcium'],1,'A pure substance can be an element or a compound. Count the kinds of atoms: Ca, C, and O make 3, so it is a compound.']];
+let qi=0,qs=0,qa=false;
+function renderQ(){
+  const b=$('#quizbox');
+  if(qi>=Q.length){const p=Math.round(qs/Q.length*100);
+    b.innerHTML='<h2>Finished!</h2><div class="big">'+qs+' / '+Q.length+'</div><p style="text-align:center">'+(p>=80?'Great work! You can compare elements and compounds with confidence.':p>=60?'Good progress. Review the table and try again.':'Keep practicing. Reread the Review tab, then try again.')+'</p><div style="text-align:center"><button class="btn" id="qre">Restart</button></div>';
+    $('#qre').onclick=()=>{qi=0;qs=0;renderQ()};return}
+  const q=Q[qi];qa=false;
+  b.innerHTML='<div class="meta"><span>Question '+(qi+1)+' of '+Q.length+' · <span class="dok">DOK '+q[0]+'</span></span><span>Score: '+qs+'</span></div><p class="stem">'+fmt(q[1])+'</p><div id="opts"></div><div id="qfb"></div>';
+  q[2].forEach((t,i)=>{const o=document.createElement('button');o.className='opt';o.innerHTML=fmt(t);
+    o.onclick=()=>{if(qa)return;qa=true;const right=i===q[3];if(right)qs++;
+      document.querySelectorAll('#opts .opt').forEach((x,j)=>{x.disabled=true;if(j===q[3])x.classList.add('ok')});
+      if(!right)o.classList.add('bad');
+      $('#qfb').innerHTML='<div class="fb"><b>'+(right?'Correct!':'Not quite.')+'</b> '+fmt(q[4])+'</div><button class="btn" id="qnx">'+(qi+1<Q.length?'Next question':'See score')+'</button>';
+      $('#qnx').onclick=()=>{qi++;renderQ()};};
+    $('#opts').appendChild(o)});
+}
+renderQ();
+</script>
+</body>
+</html>
